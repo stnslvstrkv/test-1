@@ -90,10 +90,10 @@ int main()
    ULONGLONG elapsed=::GetTickCount64()-t0;
    printf("%I64u ms elapsed, %u bytes\n",elapsed,UINT(image_size*sizeof(UINT)));
 //--- write bitmap
-   //write_bitmap32b("mandelbrot.bmp",uint_array,ExtResolution,ExtResolution);
+   write_bitmap32b("mandelbrot.bmp",uint_array,ExtResolution,ExtResolution);
    delete[] uint_array;
 //--- write results
-   /*__time64_t ctm;
+   __time64_t ctm;
    tm         time_str;
    FILE      *out;
    _time64(&ctm);
@@ -107,7 +107,7 @@ int main()
                    elapsed,UINT(image_size*sizeof(UINT)));
    fclose(out);
 //--- write results
-   char path[260];
+   /*char path[260];
    ::SHGetFolderPathA(NULL,CSIDL_APPDATA,NULL,SHGFP_TYPE_CURRENT,path);
    strcat_s(path,"\\MetaQuotes\\Terminal\\Common\\Files\\BenchResults");
    if(::GetFileAttributesA(path)==INVALID_FILE_ATTRIBUTES)
