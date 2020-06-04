@@ -90,10 +90,10 @@ int main()
    ULONGLONG elapsed=::GetTickCount64()-t0;
    printf("%I64u ms elapsed, %u bytes\n",elapsed,UINT(image_size*sizeof(UINT)));
 //--- write bitmap
-   write_bitmap32b("mandelbrot.bmp",uint_array,ExtResolution,ExtResolution);
+   //write_bitmap32b("mandelbrot.bmp",uint_array,ExtResolution,ExtResolution);
    delete[] uint_array;
 //--- write results
-   __time64_t ctm;
+   /*__time64_t ctm;
    tm         time_str;
    FILE      *out;
    _time64(&ctm);
@@ -117,6 +117,6 @@ int main()
    _fprintf_p(out,"%d.%02d.%02d %02d:%02d:%02d\t%I64u\n",
                    time_str.tm_year+1900,time_str.tm_mon,time_str.tm_mday,time_str.tm_hour,time_str.tm_min,time_str.tm_sec,
                    elapsed);
-   fclose(out);
+   fclose(out);*/
   }
 //+------------------------------------------------------------------+
